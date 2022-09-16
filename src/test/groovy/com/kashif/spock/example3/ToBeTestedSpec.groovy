@@ -10,13 +10,12 @@ class ToBeTestedSpec extends Specification {
         toBeMocked.method("test") >> "mock test"
 
         and: "An object of ToBeTested class is available"
-        def toBeTested = new ToBeTested(toBeMocked)
+        ToBeTested toBeTested = new ToBeTested(toBeMocked)
 
         when: "foo method is tested"
         def result = toBeTested.foo("test")
 
         then: "result should match the expected value"
-        result == "foo mock test"
-//        1 * toBeMocked.method("test1")
+        1 * toBeMocked.method("test")
     }
 }

@@ -16,7 +16,7 @@ class SessionHistorySpec extends Specification {
         sessionHistory.addSession(session1)
 
         then: "the service should have first session"
-        sessionHistory.getAllSessions() == [session2]
+        sessionHistory.getAllSessions() == [session1]
 
 //        when: "second session is added in the service"
 //        sessionHistory.addSession(session2)
